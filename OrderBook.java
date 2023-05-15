@@ -25,11 +25,11 @@ public class OrderBook
 
   //this is a method to view a specific price on what is the buy and sell entries it has.
   // since you do want to return every entry in the list it will take O(log N)
-  public void printOrder(int price)
+  public void printOrder(int price, Side side)
   {
     for (OrderBookEntry order : orderList.values())
     {
-      if (order.getPrice() == price)
+      if (order.getPrice() == price && order.getSide().is(side.getSide()))
       {
         System.out.print("id=" + order.getId());
         System.out.print(" Price=" + order.getPrice());

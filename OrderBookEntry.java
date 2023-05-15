@@ -7,14 +7,12 @@ public class OrderBookEntry
 
   public OrderBookEntry(int price, int quantity, Side side)
   {
+    //when a new entry of order is added we are creating the id from the OrderGenerator class that will keep count of the previous id and increment this new one by 1,
+    //this will help in making sure that the new entry always comes at the bottom off the list, as it has the highest value off keys in the list.
     this.id = OrderGenerator.getInstance().getCode() ;
     this.price = price;
     this.quantity = quantity;
     this.side = side;
-  }
-  public OrderBookEntry()
-  {
-
   }
 
   public int getId()
